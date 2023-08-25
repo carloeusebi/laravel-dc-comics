@@ -6,7 +6,7 @@ return [
   ],
   [
     'text' => 'Comics',
-    'url' => 'comics',
+    'url' => 'comics.index',
   ],
   [
     'text' => 'Movies',

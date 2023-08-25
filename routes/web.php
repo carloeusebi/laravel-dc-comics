@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ComicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,31 +18,7 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::prefix('/comics')->group(function () {
-    Route::get('/', function () {
-        $comics = config('comics');
-        $shop_items = config('shop');
-        return view('comics.list', compact('comics', 'shop_items'));
-    })->name('comics');
-
-    Route::get('/{index}', function ($index) {
-        $comics = config('comics');
-        $comic = $comics[$index];
-
-        $data = ['comic' => $comic];
-
-        /**
-         * @var $last_comic_index The index of the last comic
-         */
-        $last_comic_index = count($comics) - 1;
-
-        if ($index > 0) $data['prev'] = $index - 1;
-        if ($index < $last_comic_index) $data['next'] = $index + 1;
-
-        return view('comics.details', $data);
-    })->name('comics.details');
-});
-
+Route::resource('comics', ComicController::class)->names(['index' => 'comics.index']);
 
 Route::get('/characters', function () {
     return view('home');
