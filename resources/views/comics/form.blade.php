@@ -1,6 +1,7 @@
 <div class="container my-5">
 
     <form method="POST" action="{{ route('comics.store') }}">
+        @csrf
         <div class="row row-cols-2 mb-3">
             <div class="col">
                 <label for="title" class="form-label">Title</label>
