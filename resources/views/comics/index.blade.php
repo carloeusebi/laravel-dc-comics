@@ -31,6 +31,7 @@
             {{-- LOAD MORE BUTTON --}}
             <div class="button-container">
                 <div class="button">LOAD MORE</div>
+                <a href="{{ route('comics.create') }}" class="button">ADD COMIC</a>
             </div>
 
         </div>
