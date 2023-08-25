@@ -34,9 +34,9 @@ class ComicController extends Controller
             'title' => 'required|string|max:100',
             'description' => 'required|string',
             'thumb' => 'required|string',
-            'price' => 'string|max:8',
-            'sale_date' => 'date',
-            'type' => 'string|max:50'
+            'price' => 'integer|nullable|max:99999999',
+            'sale_date' => 'date|nullable',
+            'type' => 'string|nullable|max:50'
         ]);
 
         $data = $request->all();

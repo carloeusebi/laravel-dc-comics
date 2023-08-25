@@ -14,7 +14,7 @@ class Comic extends Model
 
     protected function price(): Attribute
     {
-        return Attribute::make(set: fn (string|null $price) => '$' . $price);
+        return Attribute::make(get: fn (float|null $price) => "$" . $price, set: fn (string|null $price) => (float) str_replace('$', '', $price));
     }
 
     protected function artists(): Attribute
