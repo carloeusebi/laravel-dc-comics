@@ -19,7 +19,7 @@
                     <div class="card">
                         <a href="{{ route('comics.show', $comic) }}">
                             <figure>
-                                <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}">
+                                <img class="comic-thumb" src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}">
                             </figure>
                             <h4>{{ $comic['title'] }}</h4>
                         </a>

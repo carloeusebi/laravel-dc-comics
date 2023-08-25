@@ -7,5 +7,9 @@
 @endsection
 
 @section('main-content')
-    @include('comics.form')
+    <div class="container">
+        <h1 class="text-center fw-bold  my-5">Add a new comic</h1>
+        <hr class="my-2">
+        @include('comics.form')
+    </div>
 @endsection
