@@ -1,6 +1,16 @@
 <div class="container my-5">
 
-    <form method="POST" action="{{ route('comics.store') }}">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <form method="POST" action="{{ route('comics.store') }}" novalidate>
         @csrf
         <div class="row row-cols-2 mb-3">
             <div class="col">
