@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('scss')
-    <link href="{{ Vite::asset('resources/scss/comics.details.scss') }}" rel="stylesheet" type="text/css">
+    <link href="{{ Vite::asset('resources/scss/comics.show.scss') }}" rel="stylesheet" type="text/css">
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css'
         integrity='sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw=='
@@ -10,23 +10,12 @@
 @section('main-content')
     <section id="comic-details">
         <div class="blue-stripe">
-            <div class="nav-links container">
-                @isset($prev)
-                    <a href="{{ route('comics.details', $prev) }}">PREV COMIC</a>
-                @endisset
-                @if (isset($prev) && isset($next))
-                    <span>|</span>
-                @endif
-                @isset($next)
-                    <a href="{{ route('comics.details', $next) }}">NEXT COMIC</a>
-                @endisset
-            </div>
         </div>
 
         <div class="container">
             <div class="comic-cover">
                 <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}">
-                <a class="gallery-link" href="{{ route('comics') }}">VIEW GALLERY</a>
+                <a class="gallery-link" href="{{ route('comics.index') }}">VIEW GALLERY</a>
             </div>
         </div>
 

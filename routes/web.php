@@ -18,8 +18,7 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::resource('comics', ComicController::class)->names(['index' => 'comics.index']);
-
+Route::resource('comics', ComicController::class);
 Route::get('/characters', function () {
     return view('home');
 })->name('characters');
