@@ -34,7 +34,7 @@ class ComicController extends Controller
             'title' => 'required|string|max:100',
             'description' => 'required|string',
             'thumb' => 'required|string',
-            'price' => 'integer|nullable|max:99999999',
+            'price' => 'numeric|nullable|max:99999999',
             'sale_date' => 'date|nullable',
             'type' => 'string|nullable|max:50'
         ]);
