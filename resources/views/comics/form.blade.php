@@ -76,7 +76,7 @@
             <div class="col">
                 <label for="sale_date" class="form-label">Sale Date</label>
                 <input type="date" class="form-control @error('sale_date') is-invalid @enderror" name="sale_date"
-                    id="sale_date" value="{{ old('sale_date') }}">
+                    id="sale_date" value="{{ old('sale_date', $comic->sale_date) }}">
                 @error('sale_date')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -87,13 +87,15 @@
         <div class="row mb-3">
             <div class="col">
                 <label for="artists">Artists, separated by a comma</label>
-                <input type="text" class="form-control" name="artists" id="artists">
+                <input type="text" class="form-control" name="artists" id="artists"
+                    value="{{ old('artists', $comic->artists) }}">
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
                 <label for="writers">Writers, separated by a comma</label>
-                <input type="text" class="form-control" name="writers" id="writers">
+                <input type="text" class="form-control" name="writers" id="writers"
+                    value="{{ old('writers', $comic->writers) }}">
             </div>
         </div>
 

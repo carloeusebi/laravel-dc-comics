@@ -14,16 +14,23 @@ class Comic extends Model
 
     protected function price(): Attribute
     {
-        return Attribute::make(get: fn (float|null $price) => "$" . $price, set: fn (string|null $price) => (float) str_replace('$', '', $price));
+        return Attribute::make(
+            get: fn (float|null $price) => $price ? "$" . $price : null,
+            set: fn (string|null $price) => $price ? (float) str_replace('$', '', $price) : null
+        );
     }
 
-    protected function artists(): Attribute
+    protected function artistsArray(): Attribute
     {
-        return Attribute::make(get: fn (string|null $artists) => explode(',', $artists));
+        return Attribute::make(
+            get: fn (string|null $artists) => explode(',', $this->artists),
+        );
     }
 
-    protected function writers(): Attribute
+    protected function writersArray(): Attribute
     {
-        return Attribute::make(get: fn (string|null $writers) => explode(', ', $writers));
+        return Attribute::make(
+            get: fn (string|null $writers) => explode(', ', $this->writers),
+        );
     }
 }
