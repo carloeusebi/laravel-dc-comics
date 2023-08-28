@@ -11,12 +11,15 @@
     @endif
 
     @csrf
+
+
+
     <div class="row row-cols-2 mb-3">
         {{-- title --}}
         <div class="col">
             <label for="title" class="form-label">Title</label>
-            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title"
-                value="{{ old('title', $comic->title) }}" required>
+            <input x-model="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title"
+                id="title" value="{{ old('title', $comic->title) }}" required>
             @error('title')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -26,8 +29,8 @@
         {{-- thumbnail --}}
         <div class="col">
             <label for="thumb" class="form-label">Thumbnail</label>
-            <input type="text" class="form-control @error('thumb') is-invalid @enderror" name="thumb"
-                id="thumb" required value="{{ old('thumb', $comic->thumb) }}">
+            <input x-model="thumbnail" type="text" class="form-control @error('thumb') is-invalid @enderror"
+                name="thumb" id="thumb" required value="{{ old('thumb', $comic->thumb) }}">
             @error('thumb')
                 <div class="invalid-feedback">
                     {{ $message }}
