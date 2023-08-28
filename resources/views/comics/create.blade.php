@@ -15,7 +15,7 @@
         thumbnail: '{{ old('thumbnail', $comic->thumb) }}'
     }">
         <div class="container">
-            <div class="d-flex justify-content-center align-items-center my-5">
+            <div class="d-flex justify-content-center align-items-center my-5 gap-4">
                 <img class="img-fluid" style="height: 150px" :src="thumbnail" :alt="title">
                 <h1 class="text-center fw-bold  my-5">Add a new comic</h1>
             </div>
