@@ -22,6 +22,16 @@ class Comic extends Model
         );
     }
 
+    /** 
+     * Removes $ in front of the price, since in the seeder the price comes with the $ in front
+     */
+    protected function price(): Attribute
+    {
+        return Attribute::make(
+            set: fn (string $price) => str_replace('$', '', $price)
+        );
+    }
+
     /**
      * Transform the comma separated string of artists in an array
      */
