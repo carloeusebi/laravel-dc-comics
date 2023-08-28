@@ -25,7 +25,7 @@
                     <h1 class="uppercase">{{ $comic['title'] }}</h1>
                     <div class="price-and-avail">
                         <div class="left">
-                            <div>U.S Price: <span class="price">{{ $comic['price'] }}</span></div>
+                            <div>U.S Price: <span class="price">{{ $comic->signedPrice }}</span></div>
                             <div class="availability">AVAILABLE</div>
                         </div>
                         <div class="right">
@@ -85,7 +85,7 @@
                 </div>
                 <div class="row">
                     <h4>U.S. Price:</h4>
-                    <div>{{ $comic['price'] }}</div>
+                    <div>{{ $comic->signedPrice }}</div>
                 </div>
                 <div class="row">
                     <h4>On Sale Date:</h4>

@@ -12,25 +12,34 @@ class Comic extends Model
 
     protected $fillable = ['title', 'description', 'thumb', 'price', 'series', 'sale_date', 'type', 'artists', 'writers'];
 
-    protected function price(): Attribute
+    /**
+     * Puts a $ in front of the price
+     */
+    protected function signedPrice(): Attribute
     {
         return Attribute::make(
-            get: fn (float|null $price) => $price ? "$" . $price : null,
-            set: fn (string|null $price) => $price ? (float) str_replace('$', '', $price) : null
+            get: fn () => $this->price ? "$" . $this->price : null,
         );
     }
 
+    /**
+     * Transform the comma separated string of artists in an array
+     */
     protected function artistsArray(): Attribute
     {
         return Attribute::make(
-            get: fn (string|null $artists) => explode(',', $this->artists),
+            get: fn () => explode(',', $this->artists),
         );
     }
 
+    /**
+     * Transform the comma separated string of writers in an array
+     * 
+     */
     protected function writersArray(): Attribute
     {
         return Attribute::make(
-            get: fn (string|null $writers) => explode(', ', $this->writers),
+            get: fn () => explode(', ', $this->writers),
         );
     }
 }

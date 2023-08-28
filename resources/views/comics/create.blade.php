@@ -10,6 +10,11 @@
     <div class="container">
         <h1 class="text-center fw-bold  my-5">Add a new comic</h1>
         <hr class="my-2">
-        @include('comics.form')
+
+
+        <form method="POST" action="{{ route('comics.store') }}" id="comic-form" novalidate>
+            @include('comics.form')
+        </form>
+
     </div>
 @endsection

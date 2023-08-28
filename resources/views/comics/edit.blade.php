@@ -11,5 +11,9 @@
         <h1 class="text-center">EDIT {{ $comic->title }}</h1>
     </div>
 
-    @include('comics.form')
+
+    <form method="POST" action="{{ route('comics.update', $comic) }}" id="comic-form" novalidate>
+        @method('put')
+        @include('comics.form')
+    </form>
 @endsection
