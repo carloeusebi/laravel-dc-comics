@@ -9,5 +9,6 @@
 @section('main-content')
     <div class="container my-5">
         <h1>EDIT PAGE</h1>
+        <p>{{ $comic->title }}</p>
     </div>
 @endsection
