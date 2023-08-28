@@ -5,6 +5,7 @@
         integrity='sha512-t4GWSVZO1eC8BM339Xd7Uphw5s17a86tIZIj8qRxhnKub6WoyhnrxeCIMeAqBPgdZGlCcG2PrZjMc+Wr78+5Xg=='
         crossorigin='anonymous' />
 
+    {{-- alpine.js --}}
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 @endsection
 
@@ -15,7 +16,7 @@
     }">
 
         <div class="container my-5 d-flex align-items-center justify-content-center ">
-            <img class="img-fluid" style="height: 150px" :src="thumbnail" alt="">
+            <img class="img-fluid" style="height: 150px" :src="thumbnail" :alt="title">
             <h1 x-text="title" class="text-center">EDIT {{ $comic->title }}</h1>
         </div>
 
