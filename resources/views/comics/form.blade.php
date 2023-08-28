@@ -17,7 +17,7 @@
             <div class="col">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" class="form-control @error('title') is-invalid @enderror" name="title"
-                    id="title" value="{{ old('title') }}" required>
+                    id="title" value="{{ old('title', $comic->title) }}" required>
                 @error('title')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -27,7 +27,7 @@
             <div class="col">
                 <label for="thumb" class="form-label">Thumbnail</label>
                 <input type="text" class="form-control @error('thumb') is-invalid @enderror" name="thumb"
-                    id="thumb" required value="{{ old('thumb') }}">
+                    id="thumb" required value="{{ old('thumb', $comic->thumb) }}">
                 @error('thumb')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -39,7 +39,7 @@
             <div class="col">
                 <label for="description">Description</label>
                 <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description"
-                    cols="30" rows="5" required>{{ old('description') }}</textarea>
+                    cols="30" rows="5" required>{{ old('description', $comic->description) }}</textarea>
                 @error('description')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -51,7 +51,7 @@
             <div class="col">
                 <label for="price" class="form-label ">Price</label>
                 <input type="text" class="form-control @error('price') is-invalid @enderror" name="price"
-                    id="price" max="7" value="{{ old('price') }}">
+                    id="price" max="7" value="{{ old('price', $comic->price) }}">
                 @error('price')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -61,7 +61,7 @@
             <div class="col">
                 <label for="series" class="form-label ">Series</label>
                 <input type="text" class="form-control @error('series') is-invalid @enderror" name="series"
-                    id="series" value="{{ old('series') }}">
+                    id="series" value="{{ old('series', $comic->series) }}">
                 @error('series')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -71,7 +71,7 @@
             <div class="col">
                 <label for="type" class="form-label ">Type</label>
                 <input type="text" class="form-control @error('type') is-invalid @enderror" name="type"
-                    id="type" value="{{ old('type') }}">
+                    id="type" value="{{ old('type', $comic->type) }}">
             </div>
             <div class="col">
                 <label for="sale_date" class="form-label">Sale Date</label>
