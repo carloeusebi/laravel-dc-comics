@@ -89,6 +89,10 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        dd($comic);
+        $comic->delete();
+
+        $message = $comic->title . " deleted successfully.";
+
+        return to_route('comics.index', ['message' => $message]);
     }
 }
