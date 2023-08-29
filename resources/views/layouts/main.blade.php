@@ -8,6 +8,8 @@
     <title>Laravel Comics</title>
     <link href="{{ Vite::asset('resources/img/favicon.ico') }}" rel="icon" type="image/ico">
 
+
+
     @vite('resources/js/app.js')
 
 
@@ -25,6 +27,12 @@
 
     @include('../partials/header')
     @include('../partials/jumbo')
+
+    @if (session('message'))
+        <div id="flash-message">
+            {{ session('message') }}
+        </div>
+    @endif
 
     <main>
         @yield('main-content')
