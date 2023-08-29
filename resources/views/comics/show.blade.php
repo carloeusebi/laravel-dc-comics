@@ -42,8 +42,13 @@
             </div>
 
 
-            <div class="button-container mb-3 d-flex justify-content-end ">
+            <div class="button-container">
                 <a href="{{ route('comics.edit', $comic) }}" class="button">EDIT COMIC</a>
+                <form action="{{ route('comics.destroy', $comic) }}" method="POST" id="delete-form">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="button delete-btn">DELETE COMIC</button>
+                </form>
             </div>
 
         </div>
