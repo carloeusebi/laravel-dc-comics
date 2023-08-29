@@ -100,3 +100,8 @@
         </div>
     </section>
 @endsection
+
+
+@section('scripts')
+    @vite('resources/js/confirm-delete.js')
+@endsection
