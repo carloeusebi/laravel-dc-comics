@@ -22,7 +22,7 @@
         <div class="container">
             <div class="wrapper">
                 <div class="comic-details">
-                    <h1 class="uppercase">{{ $comic['title'] }}</h1>
+                    <h1 id="comic-title" class="uppercase">{{ $comic->title }}</h1>
                     <div class="price-and-avail">
                         <div class="left">
                             <div>U.S Price: <span class="price">{{ $comic->signedPrice }}</span></div>
